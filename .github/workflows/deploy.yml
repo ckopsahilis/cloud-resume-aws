@@ -38,3 +38,6 @@ jobs:
       - name: Terraform Apply
         working-directory: ./terraform
         run: terraform apply -auto-approve
+
+      - name: Sync Frontend to S3
+        run: aws s3 sync frontend/ s3://chk-resume-website-eu-north-1 --delete
