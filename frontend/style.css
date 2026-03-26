@@ -7,6 +7,7 @@
     --accent-cyan: #00F2FE;
     --accent-glow: rgba(0, 242, 254, 0.15);
     --border-color: #2D3748;
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -252,6 +253,33 @@ h2 {
     color: var(--text-muted);
 }
 
+.achievement-subtitle {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.achievement-list {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.achievement-list li {
+    margin-bottom: 0.5rem;
+}
+
+.achievement-links {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.highlight-cyan {
+    color: var(--accent-cyan);
+}
+
 /* Projects Grid */
 .projects-grid {
     display: grid;
@@ -375,13 +403,19 @@ h2 {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: all 0.3s ease;
     z-index: 1000;
+}
+
+.back-to-top svg {
+    pointer-events: none;
 }
 
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .back-to-top:hover {
