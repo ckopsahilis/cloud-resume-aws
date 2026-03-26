@@ -1,4 +1,4 @@
-// Placeholder API URL - you will replace this with your actual API Gateway endpoint
+﻿// Placeholder API URL - you will replace this with your actual API Gateway endpoint
 // after Terraform finishes applying.
 const apiUrl = "https://29jobioay3.execute-api.eu-north-1.amazonaws.com/count";
 
@@ -33,21 +33,17 @@ if (apiUrl !== "REPLACE_ME_WITH_API_ENDPOINT") {
 // Back to Top functionality
 const backToTopBtn = document.getElementById("backToTop");
 
-if (backToTopBtn) {
-    window.addEventListener("scroll", () => {
-        // Reduced threshold to 100px and added documentElement fallback for better browser support
-        if (window.scrollY > 100 || document.documentElement.scrollTop > 100) {
-            backToTopBtn.classList.add("show");
-        } else {
-            backToTopBtn.classList.remove("show");
-        }
-    });
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50 || document.documentElement.scrollTop > 50) {
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
 
-    backToTopBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
-}
+});
